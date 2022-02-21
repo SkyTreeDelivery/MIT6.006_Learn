@@ -39,7 +39,7 @@ $$
 左旋代码与右旋代码，左旋与右旋的区别是：
 
 1. 交换了A和B
-2. 交换了left与right
+1. 交换了left与right
 
 ```java
 private void left_rotate(Node node){
