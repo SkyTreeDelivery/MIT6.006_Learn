@@ -33,7 +33,7 @@ $$α=n/m$$
 
 ![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220221150531.png)
 
-在理想情况下，各slot的负载均匀分布，那么map的search，insert和delete的时间复杂度就为$O(1+α)$。
+在理想情况下，各slot的负载均匀分布，那么map的search，insert和delete的时间复杂度就为$O(1+α)$。如果$α=O(1)$，则时间复杂度为$O(1)$。
 
 介绍三种常使用的hash方法：
 
