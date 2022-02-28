@@ -1,4 +1,4 @@
-# leec09 - Table Doubling, Karp-Rabin
+# lec09 - Table Doubling, Karp-Rabin
 ## hash表的增长与收缩
 
 在[[lec08 - Hashing with chaining]]中，我们引入了哈希表，但此时的hash表不能应对不断增长的item。
