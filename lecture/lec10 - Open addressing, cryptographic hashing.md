@@ -50,6 +50,123 @@ Uniform Hashing Assumption：当每个key有均等的可能具有m!个探测序�
 
 常见的密码hash包括MD5，SHA-3等，其中MD5算法已经被证明不是CR的。
 
+## 代码实现
+```java
+public class OpenAddressHash<K,V> {
+    private int count = 0;
+    private double loadFactor = 0.5;
+    private int maxSize;
+    private int tableSize = 8;
+    private Node[] table;
+
+    Node deleted = new Node(null, null);
+
+    public OpenAddressHash(){
+        table = new Node[tableSize];
+        maxSize = (int) (loadFactor * tableSize);
+    }
+
+    public void put(K key, V value){
+        if(key == null){
+            return;
+        }
+        resize();
+        for (int i = 0; i < tableSize; i++) {
+            int index = getIndex(key, i);
+            if(table[index] == deleted || table[index] == null){
+                Entry<K, V> kvEntry = new Entry<>(key, value);
+                Node<K, V> kvNode = new Node<>(kvEntry, null);
+                table[index] = kvNode;
+                count++;
+                return;
+            }
+        }
+    }
+
+    /**
+     * 获得key对应的value
+     * @param key
+     * @return
+     */
+    public V get(K key){
+        if(key == null){
+            return null;
+        }
+        for (int i = 0; i < tableSize; i++) {
+            int index = getIndex(key, i);
+            if(table[index] != null){
+                if(table[index] == deleted){
+                    continue;
+                }
+                Entry entry = table[index].entry;
+                if(entry.hash == key.hashCode() && entry.key.equals(key)){
+                    return (V) entry.value;
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
+     * 为key的第testCount次探测的下标
+     * @param key
+     * @param testCount
+     * @return
+     */
+    private int getIndex(K key, int testCount){
+        // 用使用质数求余
+        int hash = key.hashCode();
+        return ((hash % (tableSize + 1)) + testCount * (hash % tableSize + 1)) % tableSize;
+    }
+
+    private void resize(){
+        if(count == maxSize){
+            enlarge();
+        }
+    }
+
+    public V remove(K key){
+        if(key == null){
+            return null;
+        }
+        for (int i = 0; i < tableSize; i++) {
+            int index = getIndex(key, i);
+            if(table[index] != null){
+                Entry entry = table[index].entry;
+                if(entry.hash == key.hashCode() && entry.key.equals(key)){
+                    table[index] = deleted;
+                    return (V) entry.value;
+                }
+            }
+        }
+        return null;
+    }
+
+    private void enlarge(){
+        int newCapacity = tableSize * 2;
+        Node[] newTable = new Node[newCapacity];
+        for (int i = 0; i < tableSize; i++) {
+            Node testNode = table[i];
+            if(testNode == null){
+                continue;
+            }
+            for (int j = 0; j < newCapacity; j++) {
+                int hash = testNode.entry.key.hashCode();
+                int index = ((hash % newCapacity) + newCapacity * (hash % newCapacity)) % newCapacity;
+                if(newTable[index] == null){
+                    newTable[index] = testNode;
+                    break;
+                }
+            }
+        }
+        tableSize = newCapacity;
+        table = newTable;
+        maxSize = (int) (tableSize * loadFactor);
+    }
+}
+
+```
+
 
 
 

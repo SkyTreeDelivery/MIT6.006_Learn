@@ -22,7 +22,7 @@
 分析了三种常见的递归调用树：
 
 ### 每层耗时相同
-$$T=2T(n/2)+cn^2$$ 
+$$T=2T(n/2)+cn$$ 
 ![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220118201856.png)
 
 ### 叶节点主导

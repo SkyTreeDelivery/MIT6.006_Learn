@@ -61,3 +61,93 @@ a需要满足两个条件：
 $$h(k) = [(ak+b)\ mod\ p]\ mod\ m$$
 
 a和b是随机数，p和m都是一个大于宇宙原子数的质数。该hash函数保证在最差的情况下也能使负载均衡。当然相比于方法二，运算效率就低很多了。
+
+## 代码实现
+```java
+public class HashTable<K,V> {
+    private int count = 0;
+    private double loadFactor = 0.75;
+    private int maxSize;
+    private int tableSize = 8;
+    private Node[] table;
+
+    public HashTable(){
+        table = new Node[tableSize];
+        maxSize = (int) (loadFactor * tableSize);
+    }
+
+    public HashTable(int loadFactor){
+        this.loadFactor = loadFactor;
+        table = new Node[tableSize];
+        maxSize = (int) (loadFactor * tableSize);
+    }
+
+    public void put(K key, V value){
+        changeSize();
+        Entry<K, V> kvEntry = new Entry<>(key, value);
+        Node<K, V> kvNode = new Node<>(kvEntry, null);
+        int index = getIndex(key);
+        Node tableTest = table[index];
+        if(tableTest == null){
+            table[index] = kvNode;
+        }else{
+            while (tableTest.next != null){
+                tableTest = tableTest.next;
+            }
+            tableTest.next = kvNode;
+        }
+        count++;
+    }
+
+    private int getIndex(K key){
+        return key.hashCode() % tableSize;
+    }
+
+    public V get(K key){
+        int index = getIndex(key);
+        int findKeyHash = key.hashCode();
+        for (Node tableTest = table[index]; tableTest != null; tableTest = tableTest.next){
+            if(tableTest.entry.hash == findKeyHash && tableTest.entry.key.equals(key)){
+                return (V) tableTest.entry.value;
+            }
+        }
+        return null;
+    }
+
+    public V remove(K key){
+        int index = getIndex(key);
+        int findKeyHash = key.hashCode();
+        for (Node tableTest = table[index], lastNode = null; tableTest != null; lastNode = tableTest, tableTest = tableTest.next){
+            if(tableTest.entry.hash == findKeyHash && tableTest.entry.key.equals(key)){
+                lastNode.next = tableTest.next;
+                return (V) tableTest.entry.value;
+            }
+        }
+        return null;
+    }
+
+    private void changeSize(){
+        if(count == maxSize){
+            enlarge();
+        }
+//        if(count == maxSize / 4){
+//            enSmall();
+//        }
+    }
+
+    private void enlarge(){
+        int newTableSize = tableSize * 2;
+        Node[] newTable = new Node[newTableSize];
+        for(int i = 0; i < tableSize; i++){
+            for (Node testNode = table[i]; testNode != null; testNode = testNode.next){
+                int newIndex = testNode.entry.hash % newTableSize;
+                testNode.next = newTable[newIndex];
+                newTable[newIndex] = testNode;
+            }
+        }
+        table = newTable;
+        tableSize = newTableSize;
+        maxSize = (int) (tableSize * loadFactor);
+    }
+}
+```
