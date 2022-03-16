@@ -11,13 +11,5 @@
 - 节点与边是耦合的
 	- 不定义边：v.neighbours
 	- 定义边：v.edges，e.nodes, e.nodet
-## 边的分类
-可以将边分为：
-- tree edge
-- forward edge
-- backward edge
-- cross edge
-
-在BFS中，可以存在所有四种边
 ## 循环图
 如果一个图中存在cross edge 等价于 一个图是循环图
