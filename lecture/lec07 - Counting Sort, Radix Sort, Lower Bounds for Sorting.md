@@ -6,14 +6,14 @@ search方法的决策树的叶节点的数量是$n+1$，由于决策树是二叉
 
 决策树可视化结果如下：
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220218124606.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220218124606.png)
 
 ### sorting
 sorting方法的决策树的叶节点的数量是$n!$，由于决策树是二叉的，sorting的最差时间复杂度是$log(n!)$。
 
 推导过程如下：
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220218124850.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220218124850.png)
 
 ## 时间复杂度为O(n)的排序算法
 ### counting sort
@@ -25,7 +25,7 @@ sorting方法的决策树的叶节点的数量是$n!$，由于决策树是二叉
 
 基数排序效果示意图：
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220218132107.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220218132107.png)
 
 ## solid sort
 | 排序算法 | 是否solid | 时间复杂度 |

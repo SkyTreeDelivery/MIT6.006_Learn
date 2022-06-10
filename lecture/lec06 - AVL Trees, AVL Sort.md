@@ -21,7 +21,7 @@ $$
 h<\ 2*log _nN_h
 $$
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220217170317.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220217170317.png)
 
 
 ## 左旋、右旋与重平衡
@@ -84,11 +84,11 @@ private void right_rotate(Node node){
 
 情况一：只旋转一次
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220216161557.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220216161557.png)
 
 情况二：旋转两次，先右后左
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220216161716.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220216161716.png)
 
 重平衡代码
 

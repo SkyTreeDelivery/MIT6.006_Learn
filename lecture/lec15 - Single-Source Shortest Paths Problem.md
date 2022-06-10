@@ -1,11 +1,11 @@
 # lec15 - Single-Source Shortest Paths Problem
 单源最短路径算法，s.p.，寻找图中指定其实节点到所有节点的最短路径。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220310165516.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220310165516.png)
 
 对于没有负环的图，通用的S.P.算法结构如下，所有的边都要经历一次松弛操作。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220310165335.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220310165335.png)
 
 常见的S.F.算法包括：
 - BFS：O(V+E)

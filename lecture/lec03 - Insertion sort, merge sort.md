@@ -23,19 +23,19 @@
 
 ### 每层耗时相同
 $$T=2T(n/2)+cn$$ 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220118201856.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220118201856.png)
 
 ### 叶节点主导
 $$
 T(n)=2T(n/2)+c
 $$
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220118202133.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220118202133.png)
 
 ### 根节点主导
 $$
 T(n)=2T(n/2)+cn^2
 $$
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220118202236.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220118202236.png)
 

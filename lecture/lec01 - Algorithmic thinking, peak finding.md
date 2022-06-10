@@ -6,24 +6,24 @@
 
 第一种算法是一维形式的简单拓展，每次搜索[m * (n/2)]的空间====
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220116172156.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220116172156.png)
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220116172244.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220116172244.png)
 
 
 第二种算法是贪婪算法，每次搜索更大的邻接元素。时间复杂度O(n^2)。
 
 第三种算法从两个纬度上同时缩减，每次搜索[(m/2) * (n/2)]的空间。时间复杂度为O(n)。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220116172136.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220116172136.png)
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220116172257.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220116172257.png)
 
 第四种算法从两个纬度上依次缩减，每次搜索[m * (n/2)]或[(m/2) * n]的空间。时间复杂度为O(n)。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220116172212.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220116172212.png)
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220116172224.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220116172224.png)
 
 这里面算法三是错误的，我认为错误的原因可以解释为，在子区域中是峰值的不能保证其在父区域中也是峰值。
 

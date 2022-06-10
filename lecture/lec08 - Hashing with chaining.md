@@ -5,7 +5,7 @@ Hashing 数据结构的插入、查找和删除的平均时间复杂度为$O(1)$
 
 最简单的情况是被索引的对象是整数。最简单的想法是建立一个数组（也可以称之为table）用来存放item。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220221150110.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220221150110.png)
 
 足够简单，但也有两个问题：
 
@@ -14,7 +14,7 @@ Hashing 数据结构的插入、查找和删除的平均时间复杂度为$O(1)$
 
 对于第二个问题，可以用一个函数将非整数对象映射到整数。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220221150155.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220221150155.png)
 
 对于第一个问题，可以用一个函数将存储对象映射到一定的范围内。
 
@@ -22,7 +22,7 @@ Hashing 数据结构的插入、查找和删除的平均时间复杂度为$O(1)$
 
 一个简单的想法是使用一个list用来存放冲突的item。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220221150205.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220221150205.png)
 
 这个映射函数被称为hash。
 
@@ -31,7 +31,7 @@ map性能的好坏一部分取决于映射函数的选择是否能让item均匀�
 为了衡量table中slot的负载情况，定义了一个负载因子$α$（load factor）
 $$α=n/m$$
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220221150531.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220221150531.png)
 
 在理想情况下，各slot的负载均匀分布，那么map的search，insert和delete的时间复杂度就为$O(1+α)$。如果$α=O(1)$，则时间复杂度为$O(1)$。
 
@@ -54,7 +54,7 @@ a需要满足两个条件：
 
 原理可视化如下图：
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220221151323.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220221151323.png)
 
 方法三：
 

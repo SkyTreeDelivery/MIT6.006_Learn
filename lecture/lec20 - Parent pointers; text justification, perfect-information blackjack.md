@@ -9,9 +9,9 @@
 
 最难的是找出子问题，然后是定义子问题之间
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220316170244.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220316170244.png)
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220316170615.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220316170615.png)
 
 ### 常见的动态规划模板
 dp[i] = min(dp[j]) for j in i to n
@@ -21,16 +21,16 @@ dp[i] = max(dp[j]) for j in i to n if xxx
 ## 文字排版
 首先定义坏排版。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220316171157.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220316171157.png)
 
 最好的排版就是所有行的坏排版综合最小。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220316171608.png)
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220316171619.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220316171608.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220316171619.png)
 
 ## 21点
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220316172223.png)
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220316172241.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220316172223.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220316172241.png)
 
 ## 最长递增子序列
 最长增长序列的解是dp中的dp[i] for i in 0 to n中的最大值，而不是dp[0]，这是因为之前的问题都是只能从i=0开始，而该问题可以从任意位置开始。

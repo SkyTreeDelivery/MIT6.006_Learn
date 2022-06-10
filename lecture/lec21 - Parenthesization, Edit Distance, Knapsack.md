@@ -6,16 +6,16 @@
 
 前两者的子问题数量是$O(n)$，后者的子问题数量是$O(n^2)$。subffixes和prefixes不会同时使用，suffixes更符合人类的思维模式，但实际上suffixes和prefixes是等价的。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220319172653.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220319172653.png)
 
 ## 矩阵连乘次序
 对于多个相乘的矩阵，不同的计算次序的时间消耗不同。以合适的括号优化矩阵相乘的次序可以优化矩阵连乘的性能。这是一个典型的substring[i:j]问题。
 
 $dp[i][j]$表示每个子问题，i表示插入$($的下标，j表示插入$)$的下标时的最小成本。 
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220319173100.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220319173100.png)
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220319173714.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220319173714.png)
 
 ## 编辑距离
 编辑距离是度量两段字符串相似度的常用算法，可以用于DNA比较、CVS diff、拼接检查、抄袭检查等应用中。
@@ -30,10 +30,10 @@ $dp[i][j]$表示每个子问题，i表示插入$($的下标，j表示插入$)$�
 
 通过定义insert、delete和replace方法的成本来进行动态规划。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220319180907.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220319180907.png)
 
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220319180836.png)![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220319180959.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220319180836.png)![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220319180959.png)
 
 ## 01背包问题
 背包问题一个朴素的处理方法是，将每个item是否装入背包作为state，但这会导致state的数量为$O(n^2)$。
@@ -44,8 +44,8 @@ $dp[i][j]$表示每个子问题，i表示插入$($的下标，j表示插入$)$�
 
 背包问题的动态规划解法的时间复杂度为$O(nS)$，这是一个伪多项式时间的算法。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220319181649.png)
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220319181701.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220319181649.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220319181701.png)
 
 ## 伪多项式时间
 [伪多项式时间的理解 - stackoverflow](https://stackoverflow.com/questions/19647658/what-is-pseudopolynomial-time-how-does-it-differ-from-polynomial-time)
@@ -77,7 +77,7 @@ $dp[i][j]$表示每个子问题，i表示插入$($的下标，j表示插入$)$�
 
 Solution是$dp[0][S]$。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220319182908.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220319182908.png)
 
 ## K-Sum问题
 背包问题的变种，假设往背包里装入黄金，黄金的价值与重量成正比，每个item只能使用一次，是否能找出一种装法，刚好装入k个item并使背包刚好装满。
@@ -88,7 +88,7 @@ Solution是$dp[0][S]$。
 
 Solution是$dp[0][S][K]$。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220319183310.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220319183310.png)
 
 ## Multi-K-Sum问题
 背包问题的变种，假设往背包里装入黄金，黄金的价值与重量成正比，每个item可以装入无限次，是否能找出一种装法，刚好装入k个item并使背包刚好装满。

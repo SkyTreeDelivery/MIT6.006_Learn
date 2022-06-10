@@ -21,7 +21,7 @@
 ### 理论
 在一个字符串中查找子串，最简单的方法如下图所示。一次比较每一个可能的选项，假设查找的子串的长度为L，由于字符串之间的比较的最坏时间复杂度为O(L)，算法的时间复杂度为$$O(L*(n-L))=O(L*n)$$
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220223165855.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220223165855.png)
 
 从理论上分析，每个可能的候选方案都需要被筛选，因此字符串搜索算法的理论最优实践复杂度应该为$O(n)$。
 
@@ -34,7 +34,7 @@ Karp-Rabin方法就是一种时间复杂度为$O(n)$的字符串搜索算法。K
 
 对于字符串搜索算法来说，由于ASSCI字符集只有256个字符，因此hash可以将一个字符串映射为一个底为256的数字。在一般的情况中，字符串可能会很大，因此需要取模来控制数字的规模。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220223171140.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220223171140.png)
 
 在[[leetcode 187 重复的DNA序列]]的一种实现中也使用了滑动窗口的思想
 

@@ -34,11 +34,11 @@ Fibonacci求解就是一个典型的动态规划问题。
 
 递归解法
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220316163959.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220316163959.png)
 
 自底向上解法，k从1到n，反映了从小问题出发，利用最优子结构+重用解决大问题。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220316164021.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220316164021.png)
 
 ## shortest paths
 基于动态规划的最小路径问题反应了多态规划的实质。
@@ -46,12 +46,12 @@ Fibonacci求解就是一个典型的动态规划问题。
 ### 无环图
 如果图中不存在循环，那么最短路径算法的递归解法是有解的，算法的时间复杂度为$O(V+E)$。子问题的数量为$V$，所有子问题耗时为$O(V+E)=O(V^2)$。这实际上就是Topo sort + DFS。在很多动态规划问题中，就是对状态图进行Toposort + DFS，其时间复杂度就是$O(V+E)$。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220316164300.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220316164300.png)
 
 ### 有环图
 如果图中存在循环，那么原有的递归式会无限递归下去。但如果改造一下，可以将有环图转换为无环图，就能求解了。此时子问题数量为$V^2$，算法的总时间复杂度为$$O(V'+E')=O(V^2+VE)=O(V^3)$$
 实际上就是Bellmen-Ford算法。
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220316164531.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220316164531.png)
 
-![](https://gitee.com/skytreedelivery/cloudimage/raw/master/img/20220316164701.png)
+![](https://zhang113751picgo.oss-cn-hangzhou.aliyuncs.com/img/20220316164701.png)
